@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Image Survillence</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/css/find.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+</head>
+<body>    
+    
+    <div id="contact" class="formhead">
+        
+        <h1>Image Survillence</h1>
+        <div class="form">
+        <form name="findcriminalrec" method="post" action={{ url_for('imagesubmit') }} enctype = "multipart/form-data">
+            <label for="Select_file">Select Image From which People are to be identified:*</label><br>
+            <input class="box" id="fileupload" type="file" accept="image/*"  placeholder="Image" required name="Criminal_Image"><br>
+            <input class="box"  type="submit"  placeholder="Submit" required name="imagesubmit"><br>
+        </form>
+        </div>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
+</body>
+</html>
