@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Criminal Found</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/css/view.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+</head>
+<body>
+
+<h1>Criminal Detected</h1>
+<div class="content">
+    <div class="section">
+        <img id="border_img" src="/static/output_img/face_recognized.jpg" alt="Image" />
+    </div>
+    <div class="section">
+        {% for p in people %}
+            <p>Name: {{ p['name'] }} </p>
+            <p>Father's Name: {{ p['fname'] }} </p>
+            <p>Crimes Committed: {{ p['crime'] }} </p>
+            <p>Date of Birth: {{ p['DOB'] }} </p>
+            <p>Gender: {{ p['gender'] }} </p>
+            <p>Identification Mark: {{ p['imark'] }} </p>
+            <p></p><br>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

@@ -13,8 +13,8 @@ bp=Blueprint('criminal',__name__)
 @bp.route('/criminal',methods=['POST'])
 def criminalrecord():
     criminal=Criminal()
-    return criminal.insertrecord()
-    #return ("Home")
+    criminal.insertrecord()
+    return render_template("main.html")
 
 @bp.route('/find-criminal',methods=['POST','GET'])
 def findcriminalrecord():

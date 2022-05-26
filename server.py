@@ -24,9 +24,12 @@ def imagesubmit():
         print(matches_id)
         if(len(matches_id)!=0):
             people = mycol.find({"_id": { "$in" : matches_id} },{'image_encoding' : 0})
+            people=list(people)
             for i in people:
                 print(i)
-            return render_template('view.ejs', people=people)
+            print(type(i))
+            print(type(people))
+            return render_template('view.html', people=people)
         else:
             return render_template('noview.html')
     return "Failure"

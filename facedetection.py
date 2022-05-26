@@ -19,11 +19,13 @@ def face_recognition_image(filen):
     from extension import mycol
     encoding=[]
     object_id=[]
+    nm=[]
     print("--------------")
-    x = mycol.find({},{'image_encoding': 1})
+    x = mycol.find({},{'image_encoding': 1, 'name':1})
     for data in x:
         object_id.append(data["_id"])
         encoding.append(data["image_encoding"])
+        nm.append(data["name"])
 
     Matched_IDs=[]
     for (top, right, bottom, left), face_encoding in zip(boxes, test_encode):
@@ -35,7 +37,7 @@ def face_recognition_image(filen):
             cv2.rectangle(img, (left, bottom - 15), (right, bottom), (0, 0, 255), cv2.FILLED)
             font = cv2.FONT_HERSHEY_DUPLEX
             Matched_IDs.append(object_id[matchIndex])
-            cv2.putText(img, "Face", (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
+            cv2.putText(img, nm[matchIndex], (left + 6, bottom - 6), font, 1.0, (0, 0, 0), 1)
 
     File_path=os.getcwd() + '\static\output_img'
     cv2.imwrite(os.path.join(File_path , "face_recognized.jpg"), img)

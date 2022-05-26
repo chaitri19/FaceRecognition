@@ -38,7 +38,8 @@ class Criminal:
             "DOB": request.form.get('Date'),
             "crime": request.form.get('Crimes_Commited'),
             "gender": request.form.get('gender'),
-            "image_encoding": [train_image[i] for i in range(len(train_image))]
+            "image_encoding": [train_image[i] for i in range(len(train_image))],
+            "imark": request.form.get('i_mark')
         }
 
         old_criminal=copy.deepcopy(criminal)

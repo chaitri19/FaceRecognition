@@ -42,7 +42,7 @@ body, html {height: 100%}
     font-size: x-large;
 }
 
-.formhead .form .btn{
+.formhead .form input[type=submit]{
     width: 60%;
     padding: .9em 1em;
     background-color:white; 
@@ -54,7 +54,7 @@ body, html {height: 100%}
     border-radius: .2em;
     margin: .5em 0px;
 }
-.formhead .form .btn:hover {
+.formhead .form input[type=submit]:hover {
     background-color: #81ecec;
     border: 2px solid #00cec9;
   }
