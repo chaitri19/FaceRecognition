@@ -13,7 +13,7 @@
         
         <h1>Register Criminal</h1>
         <div class="form">
-        <form name="criminalrec" method="post" >
+        <form name="criminalrec" method="post" action='\criminal' enctype = "multipart/form-data">
             <label for="Name">Name:*</label>
             <input class="box" type="text" placeholder="Name" required name="Name"><br>
             <label for="Father's Name">Father's Name:*</label>
@@ -30,13 +30,12 @@
             <input type="radio" id="others" name="gender" value="Others">
             <label for="others">Others</label><br>
             <label for="Select_file">Select Image to Upload:*</label><br>
-            <input class="box" type="file" placeholder="Image" required name="Criminal_Image"><br>
-            <button class="btn" type="submit">Insert</button>
+            <input class="box" type="file" placeholder="Image" accept="image/*" required name="Insert_Criminal"><br>
+            <input class="box"  type="submit"  placeholder="Submit" required name="imagesubmit"><br>
         </form>
         </div>
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="/static/js/insert.js" type="text/javascript"></script>
 </body>
 </html>
