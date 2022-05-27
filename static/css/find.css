@@ -1,5 +1,8 @@
-body,h1,h5 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
+body,html {
+    font-family: "Raleway", sans-serif;
+    height: 100%;
+}
+
 .formhead h1{
     color:gold;
     font-size: xx-large;
@@ -12,8 +15,8 @@ body, html {height: 100%}
     background-position: center;
     background-size: cover;
     text-align: center;
-    border-color: aqua;
-    border-style: dotted;
+    border-color: red;
+    border-style: solid;
     max-width:max-content;
     padding:50px;
     margin-left:350px;

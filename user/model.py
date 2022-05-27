@@ -1,3 +1,4 @@
+#Importing Libraries
 from flask import Flask
 from flask import jsonify
 from flask import request
@@ -12,19 +13,17 @@ import face_recognition
 
 class Criminal:
 
+    #Function insertrecord accepts data from http post request and processes it and stores it to our database.
     def insertrecord(self):
 
         f = request.files['Insert_Criminal']
         filename = secure_filename(f.filename)
-        print(os.getcwd())
-        print(filename)
+        #We will first store image to our project directory and then find its facial encodings which is stored in our database.
         f.save(filename)
-        print("File Saved")
         img = cv2.imread(filename)
-        print(len(img))
         try:
+            #train_image stores facial encodings of uploaded image.
             train_image = face_recognition.face_encodings(img)[0]
-            print(len(train_image))
         except IndexError as e:
             print(e)
             os.remove(filename)
@@ -45,5 +44,6 @@ class Criminal:
         old_criminal=copy.deepcopy(criminal)
         from extension import mycol
         mycol.insert_one(criminal)
+        #Since we stored facial encodings of image we don't require image any more.
         os.remove(filename)
         return jsonify(old_criminal),200
